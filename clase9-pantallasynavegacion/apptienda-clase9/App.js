@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import AppNavigator from "./src/navigation";
 
 export default function App() {
+
   const [loaded] = useFonts({
     "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Light": require("./assets/fonts/Poppins-Light.ttf"),
