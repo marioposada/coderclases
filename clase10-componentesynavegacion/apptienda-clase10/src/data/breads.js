@@ -1,7 +1,7 @@
 export const breads = [
   {
     id: 1,
-    categoryId: 1,
+    category: 1,
     name: "Pan Baguette",
     description: "Clasico pan francés",
     price: 1600,
@@ -9,7 +9,7 @@ export const breads = [
   },
   {
     id: 2,
-    categoryId: 1,
+    category: 1,
     name: "Pan Miñon",
     description: "Clasico pan flauta",
     price: 600,
@@ -17,7 +17,7 @@ export const breads = [
   },
   {
     id: 3,
-    categoryId: 3,
+    category: 3,
     name: "Pan Hamburguesa",
     description: "Textura suave y esponjosa",
     price: 1600,
@@ -25,23 +25,23 @@ export const breads = [
   },
   {
     id: 4,
-    categoryId: 3,
+    category: 3,
     name: "Pan Picada",
     description: "Con quedo y cebolla, semillas y especias",
     price: 600,
     weight: "500 gr",
   },
   {
-    id: 1,
-    categoryId: 1,
+    id: 5,
+    category: 1,
     name: "Pan de molde integral",
     description: "Con o sin semillas",
     price: 400,
     weight: "300 gr",
   },
   {
-    id: 3,
-    categoryId: 3,
+    id: 6,
+    category: 3,
     name: "Pan Baguette",
     description: "Clasico pan francés",
     price: 1600,

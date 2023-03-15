@@ -33,7 +33,9 @@ const HomeStack = () => {
         component={CategoryScreen}
         options={({ route }) => ({ title: route.params.name })}
       />
-      <Stack.Screen name="Detail" component={DetailScreen} />
+      <Stack.Screen name="Detail" component={DetailScreen}
+      options={({ route }) => ({ title: route.params.name })}
+      />
     </Stack.Navigator>
   );
 };

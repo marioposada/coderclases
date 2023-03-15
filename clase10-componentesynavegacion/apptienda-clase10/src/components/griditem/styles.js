@@ -7,21 +7,27 @@ export const styles = StyleSheet.create({
         marginHorizontal: 20,
         margin: 15,
         height: 150,
+        backgroundColor: "#fff",
+        borderWidth: 1,
+        borderColor: "#eaeaea",
+        justifyContent: "center",
+        alignItems: "center",
+
     },
     contentContainer: {
-        flex: 1,
         borderRadius: 6,
         shadowColor: "black",
         shadowOpacity: 0.26,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 6,
         elevation: 4,
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
+        justifyContent: "center",
+        alignItems: "center",
         padding: 8,
+       
     },
     title: {
-        fontFamily: "Poppins-Bold",
+        fontFamily: "Poppins-Regular",
         fontSize: 18,
     },
 });

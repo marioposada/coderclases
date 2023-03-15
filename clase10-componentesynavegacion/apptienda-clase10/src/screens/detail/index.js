@@ -2,12 +2,16 @@ import { Button, Text, View } from "react-native";
 import react from "react";
 import { styles } from "./styles";
 
-const DetailScreen = ({navigation}) => {
+const DetailScreen = ({ route }) => {
+  const { id, title, description, price, weight } = route.params.data;
   return (
     <View style={styles.container}>
-    <Text style={styles.text}>Detail Screen</Text>
-    <Button title="Volvamos al Home" onPress={() => navigation.navigate('Home')} />
-  </View>
+      <Text>id: {id}</Text>
+      <Text>{title}</Text>
+      <Text>{description}</Text>
+      <Text>${price}</Text>
+      <Text>weight: {weight}</Text>
+    </View>
   );
 };
 

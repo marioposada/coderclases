@@ -4,9 +4,9 @@ import { styles } from "./styles";
 
 const GridItem = ({ item, onSelected }) => {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, backgroundColor: item.color}}>
       <TouchableOpacity
-        styles={{...styles.contentContainer, backgroundColor: item.color}}
+        styles={styles.contentContainer}
         onPress={() => onSelected(item)}
       >
         <View>
