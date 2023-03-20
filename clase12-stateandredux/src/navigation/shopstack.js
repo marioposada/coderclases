@@ -7,7 +7,7 @@ import { Platform } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => {
+const ShopNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
@@ -40,4 +40,4 @@ const HomeStack = () => {
   );
 };
 
-export default HomeStack;
+export default ShopNavigator;
