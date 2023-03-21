@@ -1,4 +1,5 @@
 import { breads } from "../../data/breads";
+import { SELECT_BREAD, FILTER_BREADS } from "../actions/bread.action";
 
 const initialState = {
     breads: breads,
@@ -11,12 +12,12 @@ const breadReducer = (state = initialState, action) => {
         case "SELECT_BREAD":
             return {
                 ...state,
-                selectedBread: action.payload,
+                selectedBread: breads.find((bread) => bread.id === action.breadId),
             };
         case "FILTER_BREADS":
             return {
                 ...state,
-                filteredBreads: action.payload,
+                filteredBreads: breads.filter(bread => bread.id === action.categoryId)
             };
         default:
             return state;

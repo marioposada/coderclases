@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1,
         borderRadius: 6,
         marginHorizontal: 20,
         margin: 15,
         height: 150,
+        width: 150,
         backgroundColor: "#fff",
         borderWidth: 1,
         borderColor: "#eaeaea",
@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
 
     },
     contentContainer: {
+        flex: 1,
+        width: "100%",
+        height: "auto",
         borderRadius: 6,
         shadowColor: "black",
         shadowOpacity: 0.26,
@@ -24,7 +27,6 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         padding: 8,
-       
     },
     title: {
         fontFamily: "Poppins-Regular",
