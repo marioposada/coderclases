@@ -5,7 +5,6 @@ import { GridItem } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCategory } from "../../store/actions/category.action";
 
-import { categories } from "../../data/categories";
 
 const Home = ({ navigation }) => {
   const categories = useSelector((state) => state.categories.categories);

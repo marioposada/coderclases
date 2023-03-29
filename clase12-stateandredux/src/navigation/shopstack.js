@@ -23,7 +23,7 @@ const ShopNavigator = () => {
     >
       <Stack.Screen
         options={{
-          title: "Mi Panaderia",
+          title: "NetliFix",
         }}
         name="Home"
         component={HomeScreen}

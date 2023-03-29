@@ -1,15 +1,21 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { Platform , StyleSheet, View, Text} from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 
 import ShopNavigator from "./shopstack";
 import CartNavigator from "./cartstack";
-
+import OrdersNavigator from "./orders";
 
 const Tab = createBottomTabNavigator();
 
-const Tabs = () => {
+const Tabs = ({}) => {
   return (
     <Tab.Navigator
       initialRouteName="ShopTab"
@@ -23,7 +29,6 @@ const Tabs = () => {
         name="ShopTab"
         component={ShopNavigator}
         options={{
-          title: "Mi Panaderia",
           tabBarIcon: ({ focused }) => (
             <View style={styles.item}>
               <Ionicons
@@ -52,6 +57,25 @@ const Tabs = () => {
               />
               <Text style={{ color: focused ? "#e32f45" : "#748c94" }}>
                 Cart
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="OrdersTab"
+        component={OrdersNavigator}
+        options={{
+          title: "Orders",
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.item}>
+              <Ionicons
+                name={focused ? 'file-tray-full' : "file-tray-full-outline"}
+                size={24}
+                color={focused ? "#e32f45" : "#748c94"}
+              />
+              <Text style={{ color: focused ? "#e32f45" : "#748c94" }}>
+                Order
               </Text>
             </View>
           ),

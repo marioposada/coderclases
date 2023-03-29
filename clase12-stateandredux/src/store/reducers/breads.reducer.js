@@ -17,7 +17,7 @@ const breadReducer = (state = initialState, action) => {
         case "FILTER_BREADS":
             return {
                 ...state,
-                filteredBreads: breads.filter(bread => bread.id === action.categoryId)
+                filteredBreads: breads.filter(bread => bread.category === action.categoryId)
             };
         default:
             return state;

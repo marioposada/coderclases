@@ -1,43 +1,55 @@
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import react from "react";
 import { styles } from "./styles";
-import { CART } from "../../data/cart";
 import { CartItem } from "../../components";
-import { ScreenContainer } from "react-native-screens";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItem, confirmCart } from "../../store/actions/cart.actions";
 
-const CartScreen = ({ navigation, route }) => {
+const CartScreen = ({navigation}) => {
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.items);
+  const total = useSelector((state) => state.cart.total);
 
-  const items = CART ;
-  const total = 1200;
+  const onDelete = (Id) => dispatch(removeItem(Id));
 
-  const handlerConfirmCart = () => { console.log("Confirmar compra") }
-  const handlerDeleteItem = () => { console.log("Eliminar item") }
+  const onConfirm = () => {
+    dispatch(confirmCart(items, total));
+  };
 
-  const renderItem = (data) => {
-    <CartItem item={data.item} onDelete={handlerDeleteItem} />
-  }
+  // const renderItem = ({ item }) => {
+  //   <CartItem item={item} onDelete={onDelete} />;
+  // };
 
+  const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
 
   return (
-   <View style={styles.container}>
-      <View style={styles.list}>
+    <View style={styles.container}>
+      <View style={styles.containerList}>
         <FlatList
           data={items}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
+          // style={styles.containerList}
+          keyExtractor={(item) => item.id}
         />
       </View>
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.confirm} onPress={handlerConfirmCart}>
-          <Text style={styles.confirmText}>Confirmar compra</Text>
-          <View style={styles.total}>
-            <Text style={styles.text}>Total: </Text>
-            <Text style={styles.text}>${total}</Text>
+        <TouchableOpacity
+          style={
+            items.length === 0
+              ? styles.disabledButtonConfirm
+              : styles.buttonConfirm
+          }
+          onPress={onConfirm}
+          disabled={items.length === 0}
+        >
+          <Text style={styles.textButtonConfirm}>Confirm</Text>
+          <View style={styles.totalContainer}>
+            <Text style={styles.totalTitle}>Total: </Text>
+            <Text style={styles.total}>{total}</Text>
           </View>
         </TouchableOpacity>
       </View>
     </View>
-
   );
 };
 

@@ -1,22 +1,32 @@
 export const categories = [
   {
     id: 1,
-    title: "Harinas Puras",
+    title: "Comedia",
     color: "#F2C94C",
   },
   {
     id: 2,
-    title: "Harinas Integrales ",
+    title: "Acción",
     color: "#F2994A",
   },
   {
     id: 3,
-    title: "Panes Saborizados ",
+    title: "Ciencia Ficción",
     color: "#F2C94C",
   },
   {
     id: 4,
-    title: "Otros productos de panaderia",
+    title: "Fantasia",
+    color: "#F2994A",
+  },
+  {
+    id: 5,
+    title: "Terror",
+    color: "#F2994A",
+  },
+  {
+    id: 6,
+    title: "Suspenso",
     color: "#F2994A",
   },
 ];
